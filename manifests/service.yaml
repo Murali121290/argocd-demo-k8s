@@ -10,16 +10,3 @@ spec:
   - port: 80
     targetPort: 80
     nodePort: 30080
-
-manifests/kustomization.yaml
-resources:
-  - deployment.yaml
-  - service.yaml
-
-configMapGenerator:
-  - name: web-content
-    files:
-      - index.html=site/index.html
-
-generatorOptions:
-  disableNameSuffixHash: false
